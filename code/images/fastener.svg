@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <rect width="800" height="500" fill="#f7fdf9"/>
-  <rect x="200" y="180" width="180" height="90" rx="16" fill="#0f766e"/>
-  <rect x="220" y="150" width="140" height="60" rx="12" fill="#34d399"/>
-  <rect x="430" y="180" width="180" height="90" rx="16" fill="#475569"/>
-  <rect x="450" y="150" width="140" height="60" rx="12" fill="#94a3b8"/>
-  <circle cx="290" cy="360" r="56" fill="#f59e0b"/>
-  <text x="220" y="440" font-family="Arial" font-size="28" font-weight="700" fill="#1f2937">Fasteners</text>
-</svg>
