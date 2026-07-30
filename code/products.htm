@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuildPro Hardware | Products Catalog</title>
+    <style>
+      :root {
+        --bg: #eef8f7;
+        --text: #17363a;
+        --muted: #55727a;
+        --accent: #0f766e;
+        --accent-dark: #0b4f4a;
+        --card: #ffffff;
+        --border: #cfe7e4;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #fff8ef 0%, var(--bg) 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a { text-decoration: none; color: inherit; }
+      img { max-width: 100%; height: auto; display: block; }
+      .container { width: min(1180px, 92%); margin: 0 auto; }
+      header { background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--border); }
+      .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+      .brand { font-size: 1.25rem; font-weight: 700; color: var(--accent-dark); }
+      .nav-links a { margin-left: 18px; color: var(--muted); font-weight: 600; }
+      .nav-links a:hover { color: var(--accent); }
+
+      .page-hero { padding: 48px 0 28px; background: linear-gradient(135deg, rgba(15,118,110,0.08), rgba(255,255,255,0.9)); border-bottom: 1px solid var(--border); margin-bottom: 8px; }
+      .hero-image {
+        width: 100%;
+        max-height: 280px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-top: 20px;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+      }
+      .page-hero h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 10px; }
+      .page-hero p { color: var(--muted); max-width: 720px; }
+
+      .chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+      .chip { background: white; border: 1px solid var(--border); padding: 8px 12px; border-radius: 999px; color: var(--muted); font-weight: 600; }
+
+      .section { padding: 18px 0 28px; }
+      .section-title { margin-bottom: 14px; }
+      .section-title h2 { font-size: 1.3rem; margin-bottom: 4px; }
+      .section-title p { color: var(--muted); }
+
+      .category-block { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 20px; margin-bottom: 18px; box-shadow: 0 12px 30px rgba(23,34,58,0.05); }
+      .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .product-card { border: 1px solid var(--border); border-radius: 16px; padding: 16px; background: #fffdf8; }
+      .product-card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 12px;
+      }
+      .model-tag {
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: #ecfdf5;
+        color: #047857;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .product-card h3 { margin-bottom: 6px; }
+      .product-card p { color: var(--muted); font-size: 0.95rem; }
+      .cta-banner { background: linear-gradient(135deg, #1a2337, #24344f); color: white; border-radius: 22px; padding: 24px; margin: 20px 0 40px; }
+      .cta-banner .btn { display: inline-block; margin-top: 12px; padding: 10px 16px; border-radius: 999px; font-weight: 700; background: white; color: var(--text); }
+
+      footer {
+        background: #111827;
+        color: #f3f4f6;
+        padding: 42px 0 24px;
+        margin-top: 24px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr;
+        gap: 20px;
+      }
+      .footer-card h3 { margin-bottom: 10px; color: white; }
+      .footer-card p, .footer-card a { color: #d1d5db; font-size: 0.95rem; }
+      .footer-links { display: grid; gap: 8px; }
+      .social-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+      .social-links a {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.12);
+        color: white;
+        font-weight: 600;
+      }
+      .footer-bottom {
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,0.16);
+        text-align: center;
+        color: #cbd5e1;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 1024px) {
+        .product-grid { grid-template-columns: repeat(2, 1fr); }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .nav-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .nav-links a {
+          margin-left: 0;
+        }
+
+        .chip-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .chip-row select {
+          width: 100%;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .page-hero {
+          padding-top: 32px;
+        }
+
+        .chip-row {
+          gap: 8px;
+        }
+
+        .chip {
+          width: 100%;
+          text-align: center;
+        }
+
+        .category-block,
+        .cta-banner {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <a class="brand" href="home.htm">BuildPro Hardware</a>
+        <nav class="nav-links">
+          <a href="home.htm">Home</a>
+          <a href="products.htm">Products</a>
+          <a href="contact.htm">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Explore our complete hardware catalog</h1>
+          <p>Browse trusted tools, fasteners, safety products, and more. Every category includes specialized subproducts to support residential, commercial, and industrial projects.</p>
+          <div class="chip-row">
+            <label for="product-type" style="font-weight:700; color:var(--accent-dark);">Select Product Type:</label>
+            <select id="product-type" onchange="window.location.href=this.value" style="padding:10px 12px; border:1px solid var(--border); border-radius:999px; background:white; color:var(--text); font-weight:600;">
+              <option value="products.htm">All Products</option>
+              <option value="products-tools.htm">Power Tools</option>
+              <option value="products-fasteners.htm">Fasteners</option>
+              <option value="products-safety.htm">Safety Gear</option>
+            </select>
+          </div>
+          <img class="hero-image" src="" alt="Hardware products display" />
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="category-block">
+            <div class="section-title">
+              <h2>Power Tools</h2>
+              <p>Reliable equipment for drilling, cutting, and installation tasks.</p>
+            </div>
+            <div class="product-grid">
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1581147036324-c0e7f1f3d7f0?auto=format&fit=crop&w=800&q=80" alt="Cordless drill" />
+                <span class="model-tag">Model: X10 Pro</span>
+                <h3>Cordless Drill</h3>
+              </article>
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Angle grinder" />
+                <span class="model-tag">Model: G7 Max</span>
+                <h3>Angle Grinder</h3>
+              </article>
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1603468620905-8de7d4f9b6c0?auto=format&fit=crop&w=800&q=80" alt="Rotary hammer" />
+                <span class="model-tag">Model: RH200</span>
+                <h3>Rotary Hammer</h3>
+              </article>
+            </div>
+          </div>
+
+          <div class="category-block">
+            <div class="section-title">
+              <h2>Fasteners & Fixings</h2>
+              <p>Strong hardware components for secure and lasting assembly.</p>
+            </div>
+            <div class="product-grid">
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Machine screws" />
+                <span class="model-tag">Model: MS-12</span>
+                <h3>Machine Screws</h3>
+              </article>
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=800&q=80" alt="Anchor bolts" />
+                <span class="model-tag">Model: AB-88</span>
+                <h3>Anchor Bolts</h3>
+              </article>
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Wood screws" />
+                <span class="model-tag">Model: WS-44</span>
+                <h3>Wood Screws</h3>
+              </article>
+            </div>
+          </div>
+
+          <div class="category-block">
+            <div class="section-title">
+              <h2>Safety & Protection</h2>
+              <p>Essential gear that helps workers stay safe and compliant.</p>
+            </div>
+            <div class="product-grid">
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="Work gloves" />
+                <span class="model-tag">Model: WG-22</span>
+                <h3>Work Gloves</h3>
+              </article>
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Safety helmet" />
+                <span class="model-tag">Model: SH-60</span>
+                <h3>Safety Helmets</h3>
+              </article>
+              <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Protective eyewear" />
+                <span class="model-tag">Model: PE-30</span>
+                <h3>Protective Eyewear</h3>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-banner">
+            <h2>Need a custom hardware package?</h2>
+            <p>We can help you build a tailored order list for your team, project site, or retail shelves.</p>
+            <a class="btn" href="contact.htm">Request a Quote</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-card">
+          <h3>BuildPro Hardware</h3>
+          <p>Premium tools, fasteners, and safety products for homes, workshops, and large-scale projects.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="https://wa.me/15551234567" target="_blank">WhatsApp</a>
+            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-card">
+          <h3>Contact Us</h3>
+          <div class="footer-links">
+            <a href="tel:+15551234567">📞 +1 (555) 123-4567</a>
+            <a href="mailto:sales@buildprohardware.com">✉ sales@buildprohardware.com</a>
+            <a href="#">📍 124 Industrial Avenue, New York, NY</a>
+          </div>
+        </div>
+        <div class="footer-card">
+          <h3>Business Info</h3>
+          <div class="footer-links">
+            <a href="#">🕒 Mon - Sat: 8:00 AM - 8:00 PM</a>
+            <a href="#">🚚 Same-day dispatch on stocked items</a>
+            <a href="#">🛠 Bulk orders and project support</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">© 2026 BuildPro Hardware. Built for strong projects and lasting results.</div>
+    </footer>
+  </body>
+</html>
